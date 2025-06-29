@@ -1,4 +1,6 @@
 # SD3.5 Large Carpet Pattern Fine-tuning
+![image](https://github.com/user-attachments/assets/fea74698-5046-4028-8707-64942f4eb73f)
+![image](https://github.com/user-attachments/assets/7f55ed5a-48f7-4ca4-a387-e8943acb8df9)
 
 A comprehensive Modal-based pipeline for fine-tuning Stable Diffusion 3.5 Large on carpet pattern datasets using LoRA (Low-Rank Adaptation).
 
@@ -224,3 +226,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Hugging Face](https://huggingface.co/) for the Diffusers library
 - [Modal Labs](https://modal.com/) for cloud infrastructure
 - [Microsoft](https://github.com/microsoft/LoRA) for LoRA technique
+
+
