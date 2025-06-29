@@ -3,200 +3,134 @@ base_model: stabilityai/stable-diffusion-3.5-large
 library_name: peft
 ---
 
-# Model Card for Model ID
+# SD3.5-Large Carpet Diffusion: Image to Variations
 
-<!-- Provide a quick summary of what the model is/does. -->
-
-
+This repository contains a Gradio application for generating variations of an input image using the Stable Diffusion 3.5 Large model, finetuned for carpet patterns. It leverages `mmgp` for optimized memory management, enabling efficient inference even on systems with limited VRAM.
 
 ## Model Details
 
 ### Model Description
 
-<!-- Provide a longer summary of what this model is. -->
+This model is a finetuned version of `stabilityai/stable-diffusion-3.5-large` specifically adapted for generating high-quality carpet patterns. It uses a LoRA (Low-Rank Adaptation) checkpoint to apply the finetuning. The application allows users to upload an image and generate 5 unique variations based on a text prompt and various parameters like strength, inference steps, and guidance scale.
 
+- **Developed by:** StarAtNyte
+- **Model type:** Image-to-Image Diffusion Model (Finetuned)
+- **Language(s) (NLP):** English
+- **License:** MIT (or appropriate license for SD3.5-Large and finetuning)
+- **Finetuned from model:** `stabilityai/stable-diffusion-3.5-large`
 
+### Model Sources
 
-- **Developed by:** [More Information Needed]
-- **Funded by [optional]:** [More Information Needed]
-- **Shared by [optional]:** [More Information Needed]
-- **Model type:** [More Information Needed]
-- **Language(s) (NLP):** [More Information Needed]
-- **License:** [More Information Needed]
-- **Finetuned from model [optional]:** [More Information Needed]
-
-### Model Sources [optional]
-
-<!-- Provide the basic links for the model. -->
-
-- **Repository:** [More Information Needed]
-- **Paper [optional]:** [More Information Needed]
-- **Demo [optional]:** [More Information Needed]
+- **Repository:** [This GitHub Repository]
+- **Demo:** Local Gradio application (`app_optimized.py`)
 
 ## Uses
 
-<!-- Address questions around how the model is intended to be used, including the foreseeable users of the model and those affected by the model. -->
-
 ### Direct Use
 
-<!-- This section is for the model use without fine-tuning or plugging into a larger ecosystem/app. -->
-
-[More Information Needed]
-
-### Downstream Use [optional]
-
-<!-- This section is for the model use when fine-tuned for a task, or when plugged into a larger ecosystem/app -->
-
-[More Information Needed]
+This model is intended for generating creative variations of carpet patterns from an input image. It can be used by designers, artists, or anyone interested in exploring generative AI for textile design.
 
 ### Out-of-Scope Use
 
-<!-- This section addresses misuse, malicious use, and uses that the model will not work well for. -->
-
-[More Information Needed]
+This model is not intended for generating harmful, illegal, or unethical content. It is specifically trained for carpet patterns and may not perform well on other image generation tasks without further finetuning.
 
 ## Bias, Risks, and Limitations
 
-<!-- This section is meant to convey both technical and sociotechnical limitations. -->
-
-[More Information Needed]
+As with any generative AI model, there may be inherent biases present in the training data which could be reflected in the generated outputs. Users should be aware that the model's output is influenced by the input prompt and image, and results may vary.
 
 ### Recommendations
 
-<!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
-
-Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.
+Users should critically evaluate the generated images and understand that the model is a tool for creative exploration.
 
 ## How to Get Started with the Model
 
-Use the code below to get started with the model.
+### Prerequisites
 
-[More Information Needed]
+- Python 3.8+
+- Git
+
+### Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [YOUR_REPO_URL_HERE]
+    cd Carpet Diffusion
+    ```
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Download Model Weights:**
+    The `adapter_model.safetensors` and `adapter_config.json` files are required for the application to run. These are typically finetuned model weights. You will need to place these files in the root directory of the project.
+    *(Note: These files are `.gitignore`d and not part of the repository due to their size and nature as model artifacts.)*
+
+### Running the Application
+
+To launch the Gradio application, run:
+
+```bash
+python app_optimized.py
+```
+
+The application will typically be accessible in your browser at `http://192.168.50.145:7860` (or a similar local IP address/port).
 
 ## Training Details
 
 ### Training Data
 
-<!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
-
-[More Information Needed]
+The model was finetuned on a dataset of carpet patterns. (Specific details about the dataset are not provided in the current context but would typically be included here).
 
 ### Training Procedure
 
-<!-- This relates heavily to the Technical Specifications. Content here should link to that section when it is relevant to the training procedure. -->
-
-#### Preprocessing [optional]
-
-[More Information Needed]
-
+The model was finetuned using LoRA (Low-Rank Adaptation) on the `stabilityai/stable-diffusion-3.5-large` base model. The `sd3.5_large_finetuning.py` script likely contains the finetuning logic.
 
 #### Training Hyperparameters
 
-- **Training regime:** [More Information Needed] <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
-
-#### Speeds, Sizes, Times [optional]
-
-<!-- This section provides information about throughput, start/end time, checkpoint size if relevant, etc. -->
-
-[More Information Needed]
+- **Training regime:** bf16 mixed precision (inferred from `app_optimized.py` using `torch.bfloat16`)
 
 ## Evaluation
 
-<!-- This section describes the evaluation protocols and provides the results. -->
-
-### Testing Data, Factors & Metrics
-
-#### Testing Data
-
-<!-- This should link to a Dataset Card if possible. -->
-
-[More Information Needed]
-
-#### Factors
-
-<!-- These are the things the evaluation is disaggregating by, e.g., subpopulations or domains. -->
-
-[More Information Needed]
-
-#### Metrics
-
-<!-- These are the evaluation metrics being used, ideally with a description of why. -->
-
-[More Information Needed]
-
-### Results
-
-[More Information Needed]
-
-#### Summary
-
-
-
-## Model Examination [optional]
-
-<!-- Relevant interpretability work for the model goes here -->
-
-[More Information Needed]
+(More information needed for detailed evaluation metrics and results.)
 
 ## Environmental Impact
 
-<!-- Total emissions (in grams of CO2eq) and additional considerations, such as electricity usage, go here. Edit the suggested text below accordingly -->
-
 Carbon emissions can be estimated using the [Machine Learning Impact calculator](https://mlco2.github.io/impact#compute) presented in [Lacoste et al. (2019)](https://arxiv.org/abs/1910.09700).
 
-- **Hardware Type:** [More Information Needed]
+- **Hardware Type:** (e.g., NVIDIA RTX 4090, inferred from `app_optimized.py` comments)
 - **Hours used:** [More Information Needed]
 - **Cloud Provider:** [More Information Needed]
 - **Compute Region:** [More Information Needed]
 - **Carbon Emitted:** [More Information Needed]
 
-## Technical Specifications [optional]
+## Technical Specifications
 
 ### Model Architecture and Objective
 
-[More Information Needed]
+The application uses `StableDiffusion3Img2ImgPipeline` from the `diffusers` library, optimized with `mmgp` for efficient memory management during inference. The objective is to generate diverse image variations from an input image and text prompt.
 
 ### Compute Infrastructure
 
-[More Information Needed]
-
 #### Hardware
 
-[More Information Needed]
+Optimized for GPUs with sufficient VRAM (e.g., RTX 4090 with 24GB VRAM) and system RAM (e.g., 32GB+). `mmgp` profiles are available for various hardware configurations.
 
 #### Software
 
-[More Information Needed]
+- Python
+- PyTorch
+- Gradio
+- Diffusers
+- PIL (Pillow)
+- mmgp
 
-## Citation [optional]
+## Model Card Authors
 
-<!-- If there is a paper or blog post introducing the model, the APA and Bibtex information for that should go in this section. -->
-
-**BibTeX:**
-
-[More Information Needed]
-
-**APA:**
-
-[More Information Needed]
-
-## Glossary [optional]
-
-<!-- If relevant, include terms and calculations in this section that can help readers understand the model or model card. -->
-
-[More Information Needed]
-
-## More Information [optional]
-
-[More Information Needed]
-
-## Model Card Authors [optional]
-
-[More Information Needed]
+StarAtNyte
 
 ## Model Card Contact
 
-[More Information Needed]
+khanalnitij20@gmail.com
+
 ### Framework versions
 
 - PEFT 0.15.2
