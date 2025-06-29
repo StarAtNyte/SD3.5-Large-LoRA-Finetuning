@@ -1,5 +1,48 @@
-*.safetensors
-adapter_config.json
-.env
+# Gitignore for Carpet Diffusion project
+
+# Python
 __pycache__/
+*.pyc
+*.pyd
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.env
+.venv
+venv/
+env/
+
+# Hugging Face tokens
+# This line specifically ignores files that might contain Hugging Face tokens.
+# It's a good practice to keep sensitive information out of version control.
+# If you have files with tokens, list them here.
+# Example:
+# my_token_file.txt
+# config/secrets.py
+
+# Specific files that might contain tokens
+app.py
+app_optimized.py
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+log/
+
+# Data
+data/
+output/
 generated_variations/
+
+# Checkpoints
+*.ckpt
+*.safetensors
