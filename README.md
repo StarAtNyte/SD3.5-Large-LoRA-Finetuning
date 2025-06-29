@@ -128,13 +128,6 @@ train_sd35_large_carpet_model.remote(
 | `mixed_precision` | `"bf16"` | Mixed precision training |
 | `save_every_n_epochs` | `1` | Checkpoint saving frequency |
 
-### Generation Parameters
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `num_variations` | `4` | Number of variations to generate |
-| `strength` | `0.8` | Img2img strength (0.0-1.0) |
-| `num_inference_steps` | `28` | Denoising steps |
 
 ## 📁 File Structure
 
