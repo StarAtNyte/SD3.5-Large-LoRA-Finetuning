@@ -13,7 +13,6 @@ This repository contains a Gradio application for generating variations of an in
 
 This model is a finetuned version of `stabilityai/stable-diffusion-3.5-large` specifically adapted for generating high-quality carpet patterns. It uses a LoRA (Low-Rank Adaptation) checkpoint to apply the finetuning. The application allows users to upload an image and generate 5 unique variations based on a text prompt and various parameters like strength, inference steps, and guidance scale.
 
-- **Developed by:** StarAtNyte
 - **Model type:** Image-to-Image Diffusion Model (Finetuned)
 - **Language(s) (NLP):** English
 - **License:** MIT (or appropriate license for SD3.5-Large and finetuning)
