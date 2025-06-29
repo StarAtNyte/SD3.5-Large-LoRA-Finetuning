@@ -1,0 +1,5 @@
+*.safetensors
+adapter_config.json
+.env
+__pycache__/
+generated_variations/
