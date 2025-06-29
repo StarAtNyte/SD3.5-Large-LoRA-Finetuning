@@ -1,8 +1,8 @@
 # SD3.5 Large Carpet Pattern Fine-tuning
+A comprehensive Modal-based pipeline for fine-tuning Stable Diffusion 3.5 Large on carpet pattern datasets using LoRA (Low-Rank Adaptation).
+
 ![image](https://github.com/user-attachments/assets/fea74698-5046-4028-8707-64942f4eb73f)
 ![image](https://github.com/user-attachments/assets/7f55ed5a-48f7-4ca4-a387-e8943acb8df9)
-
-A comprehensive Modal-based pipeline for fine-tuning Stable Diffusion 3.5 Large on carpet pattern datasets using LoRA (Low-Rank Adaptation).
 
 ## 🎯 Overview
 
